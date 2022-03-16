@@ -1,0 +1,41 @@
+{
+    "Total Elements Score": 16.49,
+    "Executed Elements": [
+        {
+            "Executed Element Name": "4T",
+            "Score for this element": 10.99,
+            "scores": {"scores": [
+                {"score": 1},
+                {"score": 1},
+                {"score": 1},
+                {"score": 1},
+                {"score": 2},
+                {"score": 2},
+                {"score": 2},
+                {"score": 2},
+                {"score": 3}
+            ]},
+            "Half Program": 0,
+            "Base Value": 9.5,
+            "GOE": 1.49
+        },
+        {
+            "Executed Element Name": "4F",
+            "Score for this element": 5.5,
+            "scores": {"scores": [
+                {"score": -5},
+                {"score": -5},
+                {"score": -5},
+                {"score": -5},
+                {"score": -5},
+                {"score": -5},
+                {"score": -5},
+                {"score": -5},
+                {"score": -5}
+            ]},
+            "Half Program": 0,
+            "Base Value": 11,
+            "GOE": -5.5
+        }
+    ]
+}

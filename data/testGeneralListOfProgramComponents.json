@@ -1,0 +1,37 @@
+{
+    "Total Program Components Score": 17.32,
+    "Program Components": [
+        {
+            "Program Component Name": "Skating Skills",
+            "Score for this element": 8.64,
+            "scores": {"scores": [
+                {"score": 8},
+                {"score": 8.5},
+                {"score": 8.5},
+                {"score": 8.5},
+                {"score": 8.75},
+                {"score": 8.75},
+                {"score": 8.75},
+                {"score": 8.75},
+                {"score": 9}
+            ]},
+            "factor": 1
+        },
+        {
+            "Program Component Name": "Transitions",
+            "Score for this element": 8.68,
+            "scores": {"scores": [
+                {"score": 8.5},
+                {"score": 8.5},
+                {"score": 8.5},
+                {"score": 8.5},
+                {"score": 8.75},
+                {"score": 8.75},
+                {"score": 8.75},
+                {"score": 9},
+                {"score": 9.25}
+            ]},
+            "factor": 1
+        }
+    ]
+}

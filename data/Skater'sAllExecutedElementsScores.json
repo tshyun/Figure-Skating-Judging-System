@@ -1,0 +1,21 @@
+{
+    "Total Elements Score": 13.3,
+    "Executed Elements": [{
+        "Executed Element Name": "4s",
+        "Score for this element": 13.3,
+        "scores": {"scores": [
+            {"score": 4},
+            {"score": 4},
+            {"score": 4},
+            {"score": 4},
+            {"score": 4},
+            {"score": 4},
+            {"score": 4},
+            {"score": 4},
+            {"score": 4}
+        ]},
+        "Half Program": 0,
+        "Base Value": 9.5,
+        "GOE": 3.8
+    }]
+}

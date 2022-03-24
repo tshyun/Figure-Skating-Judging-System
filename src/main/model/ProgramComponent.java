@@ -8,10 +8,10 @@ import persistence.Writable;
 public class ProgramComponent implements Writable {
     private String performanceName; // the name for program components
     private double factor; // the factor for this component, usually 0.8,1.0,1.2
-    private ListOfJudgeScores judgeScore; // 9 judge's score for this component
+    private ListOfJudgeScoresMenLadiesAndPairs judgeScore; // 9 judge's score for this component
     private double scoreOfPanel; // factor * judge's average
 
-    public ProgramComponent(String nm, double factor, ListOfJudgeScores score) {
+    public ProgramComponent(String nm, double factor, ListOfJudgeScoresMenLadiesAndPairs score) {
         this.performanceName = nm;
         this.factor = factor;
         this.judgeScore = score;

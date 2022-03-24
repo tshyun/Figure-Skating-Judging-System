@@ -1,10 +1,10 @@
 package persistence;
 
-import model.ExecutedElement;
+import model.ExecutedElementMenAndLadies;
 import model.ListOfExecutedElements;
 
 
-import model.ListOfJudgeScores;
+import model.ListOfJudgeScoresMenLadiesAndPairs;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -66,23 +66,23 @@ public class JsonReaderListOfExecutedElements {
         String name = jsonObject.getString("Executed Element Name");
         int half = jsonObject.getInt("Half Program");
         double baseValue = jsonObject.getDouble("Base Value");
-        ListOfJudgeScores ls;
+        ListOfJudgeScoresMenLadiesAndPairs ls;
         ls = parseListOfScore(jsonObject.getJSONObject("scores"));
-        ExecutedElement e = new ExecutedElement(name, half, ls);
+        ExecutedElementMenAndLadies e = new ExecutedElementMenAndLadies(name, half, ls);
         lee.addElement(e);
     }
 
 
     // EFFECTS: parses ListOfJudgeScores from JSON object and returns it
-    public ListOfJudgeScores parseListOfScore(JSONObject jsonObject) {
-        ListOfJudgeScores js = new ListOfJudgeScores();
+    public ListOfJudgeScoresMenLadiesAndPairs parseListOfScore(JSONObject jsonObject) {
+        ListOfJudgeScoresMenLadiesAndPairs js = new ListOfJudgeScoresMenLadiesAndPairs();
         addScoreToJudgeScores(js, jsonObject);
         return js;
     }
 
     // MODIFIES: js
     // EFFECTS: parses scores from JSON object and adds them to ListOfJudgeScores
-    private void addScoreToJudgeScores(ListOfJudgeScores js, JSONObject jsonObject) {
+    private void addScoreToJudgeScores(ListOfJudgeScoresMenLadiesAndPairs js, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("scores");
         for (Object json : jsonArray) {
             JSONObject d = (JSONObject) json;

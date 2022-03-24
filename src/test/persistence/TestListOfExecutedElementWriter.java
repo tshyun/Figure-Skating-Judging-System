@@ -1,8 +1,8 @@
 package persistence;
 
-import model.ExecutedElement;
+import model.ExecutedElementMenAndLadies;
 import model.ListOfExecutedElements;
-import model.ListOfJudgeScores;
+import model.ListOfJudgeScoresMenLadiesAndPairs;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class TestListOfExecutedElementWriter {
     @Test
     void testWriterInvalidFile() {
         try {
-            ListOfJudgeScores scores = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs scores = new ListOfJudgeScoresMenLadiesAndPairs();
             scores.addScores(1);
             scores.addScores(1);
             scores.addScores(1);
@@ -25,7 +25,7 @@ public class TestListOfExecutedElementWriter {
             scores.addScores(1);
             scores.addScores(1);
             scores.addScores(1);
-            ExecutedElement js = new ExecutedElement("name", 1, scores);
+            ExecutedElementMenAndLadies js = new ExecutedElementMenAndLadies("name", 1, scores);
             JsonWriterListOfExecutedElements writer = new JsonWriterListOfExecutedElements("./data/my\0:fileName.json");
             writer.open();
             fail("IOException was expected");
@@ -37,7 +37,7 @@ public class TestListOfExecutedElementWriter {
     @Test
     void testWriterGeneralListOfExecutedElement(){
         try {
-            ListOfJudgeScores score1 = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs score1 = new ListOfJudgeScoresMenLadiesAndPairs();
             score1.addScores(1);
             score1.addScores(2);
             score1.addScores(1);
@@ -47,8 +47,8 @@ public class TestListOfExecutedElementWriter {
             score1.addScores(2);
             score1.addScores(1);
             score1.addScores(1);
-            ExecutedElement e1 = new ExecutedElement("4T", 0, score1);
-            ListOfJudgeScores score2 = new ListOfJudgeScores();
+            ExecutedElementMenAndLadies e1 = new ExecutedElementMenAndLadies("4T", 0, score1);
+            ListOfJudgeScoresMenLadiesAndPairs score2 = new ListOfJudgeScoresMenLadiesAndPairs();
             score2.addScores(-5);
             score2.addScores(-5);
             score2.addScores(-5);
@@ -58,7 +58,7 @@ public class TestListOfExecutedElementWriter {
             score2.addScores(-5);
             score2.addScores(-5);
             score2.addScores(-5);
-            ExecutedElement e2 = new ExecutedElement("4F",  0, score2);
+            ExecutedElementMenAndLadies e2 = new ExecutedElementMenAndLadies("4F",  0, score2);
             ListOfExecutedElements lee = new ListOfExecutedElements();
             lee.addElement(e1);
             lee.addElement(e2);

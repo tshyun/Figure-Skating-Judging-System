@@ -59,22 +59,22 @@ public class JsonReaderListOfProgramComponents {
     private void addJudgeScoresToProgramComponent(ListOfProgramComponents lop, JSONObject jsonObject) {
         String name = jsonObject.getString("Program Component Name");
         double factor = jsonObject.getDouble("factor");
-        ListOfJudgeScores ls;
+        ListOfJudgeScoresMenLadiesAndPairs ls;
         ls = parseListOfScore(jsonObject.getJSONObject("scores"));
         ProgramComponent e = new ProgramComponent(name,factor,ls);
         lop.addElement(e);
     }
 
     // EFFECTS: parses ListOfJudgeScores from JSON object and returns it
-    public ListOfJudgeScores parseListOfScore(JSONObject jsonObject) {
-        ListOfJudgeScores js = new ListOfJudgeScores();
+    public ListOfJudgeScoresMenLadiesAndPairs parseListOfScore(JSONObject jsonObject) {
+        ListOfJudgeScoresMenLadiesAndPairs js = new ListOfJudgeScoresMenLadiesAndPairs();
         addScoreToJudgeScores(js, jsonObject);
         return js;
     }
 
     // MODIFIES: js
     // EFFECTS: parses scores from JSON object and adds them to ListOfJudgeScores
-    private void addScoreToJudgeScores(ListOfJudgeScores js, JSONObject jsonObject) {
+    private void addScoreToJudgeScores(ListOfJudgeScoresMenLadiesAndPairs js, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("scores");
         for (Object json : jsonArray) {
             JSONObject d = (JSONObject) json;

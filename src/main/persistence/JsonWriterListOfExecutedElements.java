@@ -1,6 +1,5 @@
 package persistence;
 
-import model.ExecutedElement;
 import model.ListOfExecutedElements;
 import org.json.JSONObject;
 

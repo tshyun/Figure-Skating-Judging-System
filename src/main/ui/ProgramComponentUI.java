@@ -1,6 +1,5 @@
 package ui;
 
-import model.ExecutedElement;
 import model.ProgramComponent;
 
 import javax.swing.*;

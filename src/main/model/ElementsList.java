@@ -2,12 +2,12 @@ package model;
 
 import java.util.List;
 
-public class Single {
+public class ElementsList {
     public List<Element> elements;
     public CSVReaderInJava csvReaderInJava = new CSVReaderInJava();
 
-    public Single() {
-        this.elements = csvReaderInJava.readBooksFromCSV("2253.txt");
+    public ElementsList() {
+        this.elements = csvReaderInJava.readBooksFromCSV("2253MenAndLadies.txt");
     }
 
     public double getBaseValue(String name){

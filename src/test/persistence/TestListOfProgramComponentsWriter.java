@@ -1,6 +1,6 @@
 package persistence;
 
-import model.ListOfJudgeScores;
+import model.ListOfJudgeScoresMenLadiesAndPairs;
 import model.ListOfProgramComponents;
 import model.ProgramComponent;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ public class TestListOfProgramComponentsWriter {
     @Test
     void testWriterInvalidFile(){
         try {
-            ListOfJudgeScores scores = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs scores = new ListOfJudgeScoresMenLadiesAndPairs();
             scores.addScores(1);
             scores.addScores(1);
             scores.addScores(1);
@@ -39,7 +39,7 @@ public class TestListOfProgramComponentsWriter {
     void testWriterGeneralListOfProgramComponents() {
         try {
             ListOfProgramComponents list = new ListOfProgramComponents();
-            ListOfJudgeScores score1 = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs score1 = new ListOfJudgeScoresMenLadiesAndPairs();
             score1.addScores(8.75);
             score1.addScores(9.00);
             score1.addScores(8.75);
@@ -50,7 +50,7 @@ public class TestListOfProgramComponentsWriter {
             score1.addScores(8.50);
             score1.addScores(8.75);
             ProgramComponent e1 = new ProgramComponent("Skating Skills", 1.00, score1);//8.64
-            ListOfJudgeScores score2 = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs score2 = new ListOfJudgeScoresMenLadiesAndPairs();
             score2.addScores(8.75);
             score2.addScores(9.25);
             score2.addScores(8.50);

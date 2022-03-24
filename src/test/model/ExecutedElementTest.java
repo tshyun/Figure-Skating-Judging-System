@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ExecutedElementTest {
 
-    private ExecutedElement e1;
-    private ExecutedElement e2;
+    private ExecutedElementMenAndLadies e1;
+    private ExecutedElementMenAndLadies e2;
     
     @BeforeEach
     public void before() {
-        ListOfJudgeScores score1 = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs score1 = new ListOfJudgeScoresMenLadiesAndPairs();
         score1.addScores(4);
         score1.addScores(4);
         score1.addScores(4);
@@ -22,10 +22,10 @@ class ExecutedElementTest {
         score1.addScores(4);
         score1.addScores(3);
         score1.addScores(3);
-        e1 = new ExecutedElement
+        e1 = new ExecutedElementMenAndLadies
                 ("4Lz", 0, score1);
 
-        ListOfJudgeScores score2 = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs score2 = new ListOfJudgeScoresMenLadiesAndPairs();
         score2.addScores(2);
         score2.addScores(0);
         score2.addScores(-1);
@@ -35,7 +35,7 @@ class ExecutedElementTest {
         score2.addScores(-1);
         score2.addScores(-1);
         score2.addScores(-1);
-        e2 = new ExecutedElement
+        e2 = new ExecutedElementMenAndLadies
                 ("4T+3T",0, score2);
 
 
@@ -43,13 +43,13 @@ class ExecutedElementTest {
 
     @Test
     public void calculateGOEPositiveTest(){
-        ListOfJudgeScores judge = e1.getJudgeScore();
+        ListOfJudgeScoresMenLadiesAndPairs judge = e1.getJudgeScore();
         assertEquals(4.44, e1.calculateGOE(judge.average()));
     }
 
     @Test
     public void calculateGOENegativeTest(){
-        ListOfJudgeScores judge = e2.getJudgeScore();
+        ListOfJudgeScoresMenLadiesAndPairs judge = e2.getJudgeScore();
         assertEquals(-0.59, e2.calculateGOE(judge.average()));
     }
 
@@ -58,7 +58,7 @@ class ExecutedElementTest {
         String name = e1.getElementName();
         double bv = e1.getBaseValue();
         int half = e1.getHalfProgram();
-        ListOfJudgeScores judge = e1.getJudgeScore();
+        ListOfJudgeScoresMenLadiesAndPairs judge = e1.getJudgeScore();
         double goe = e1.calculateGOE(judge.average());
         e1.calculateBaseValue(bv,half);
         double baseValue = e1.getBaseValue();
@@ -69,7 +69,7 @@ class ExecutedElementTest {
 
     @Test
     public void calculatePanelScoresHalfTest () {
-        ListOfJudgeScores scores = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs scores = new ListOfJudgeScoresMenLadiesAndPairs();
         scores.addScores(4);
         scores.addScores(4);
         scores.addScores(4);
@@ -79,9 +79,9 @@ class ExecutedElementTest {
         scores.addScores(4);
         scores.addScores(3);
         scores.addScores(3);
-        ExecutedElement e = new ExecutedElement
+        ExecutedElementMenAndLadies e = new ExecutedElementMenAndLadies
                 ("3A", 1, scores);
-        ListOfJudgeScores judge = e.getJudgeScore();
+        ListOfJudgeScoresMenLadiesAndPairs judge = e.getJudgeScore();
         String name = e.getElementName();
         double bv = e.getBaseValue();
         int half = e.getHalfProgram();

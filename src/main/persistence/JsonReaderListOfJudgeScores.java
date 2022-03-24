@@ -1,6 +1,6 @@
 package persistence;
 
-import model.ListOfJudgeScores;
+import model.ListOfJudgeScoresMenLadiesAndPairs;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -22,7 +22,7 @@ public class JsonReaderListOfJudgeScores {
 
     // EFFECTS: reads ListOfJudgeScores from file and returns it;
     // throws IOException if an error occurs reading data from file
-    public ListOfJudgeScores read() throws IOException {
+    public ListOfJudgeScoresMenLadiesAndPairs read() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
         return parseListOfScore(jsonObject);
@@ -40,15 +40,15 @@ public class JsonReaderListOfJudgeScores {
     }
 
     // EFFECTS: parses ListOfJudgeScores from JSON object and returns it
-    public ListOfJudgeScores parseListOfScore(JSONObject jsonObject) {
-        ListOfJudgeScores js = new ListOfJudgeScores();
+    public ListOfJudgeScoresMenLadiesAndPairs parseListOfScore(JSONObject jsonObject) {
+        ListOfJudgeScoresMenLadiesAndPairs js = new ListOfJudgeScoresMenLadiesAndPairs();
         addScore(js, jsonObject);
         return js;
     }
 
     // MODIFIES: js
     // EFFECTS: parses scores from JSON object and adds them to ListOfJudgeScores
-    private void addScore(ListOfJudgeScores js, JSONObject jsonObject) {
+    private void addScore(ListOfJudgeScoresMenLadiesAndPairs js, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("scores");
         for (Object json : jsonArray) {
             JSONObject d = (JSONObject) json;

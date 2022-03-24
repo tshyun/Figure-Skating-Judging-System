@@ -1,9 +1,6 @@
 package persistence;
 
-import model.ListOfExecutedElements;
-import model.ListOfJudgeScores;
 import model.ListOfProgramComponents;
-import model.ProgramComponent;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

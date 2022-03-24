@@ -13,7 +13,7 @@ public class ListOfProgramComponentsTest {
     @Test
     public void sumTest() {
         list = new ListOfProgramComponents();
-        ListOfJudgeScores score1 = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs score1 = new ListOfJudgeScoresMenLadiesAndPairs();
         score1.addScores(8.75);
         score1.addScores(9.00);
         score1.addScores(8.75);
@@ -24,7 +24,7 @@ public class ListOfProgramComponentsTest {
         score1.addScores(8.50);
         score1.addScores(8.75);
         e1 = new ProgramComponent("Skating Skills", 1.00, score1);//8.64
-        ListOfJudgeScores score2 = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs score2 = new ListOfJudgeScoresMenLadiesAndPairs();
         score2.addScores(8.75);
         score2.addScores(9.25);
         score2.addScores(8.50);

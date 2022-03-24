@@ -129,14 +129,14 @@ public class ScoreApp {
             Integer half = input.nextInt();
             System.out.println("Enter the base value: ");
             Double baseValue = input.nextDouble();
-            ListOfJudgeScores scores = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs scores = new ListOfJudgeScoresMenLadiesAndPairs();
             System.out.println("There are totally nine judge scores");
             for (int i = 0; i < 9; i++) {
                 System.out.println("Enter the judge score for this element, an integer from [-5,+5]: ");
                 double score = input.nextDouble();
                 scores.addScores(score);
             }
-            ExecutedElement e = new ExecutedElement(executedName, half, scores);
+            ExecutedElementMenAndLadies e = new ExecutedElementMenAndLadies(executedName, half, scores);
             e.calculateBaseValue(baseValue,half);
             loe.addElement(e);
         }
@@ -154,7 +154,7 @@ public class ScoreApp {
             String programComponentsName = input.next();
             System.out.println("Enter the factor: ");
             Double factor = input.nextDouble();
-            ListOfJudgeScores scores = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs scores = new ListOfJudgeScoresMenLadiesAndPairs();
             System.out.println("There are totally nine judge scores");
             for (int i = 0; i < 9; i++) {
                 System.out.println("Enter the judge score for this components: ");

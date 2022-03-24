@@ -1,6 +1,6 @@
 package persistence;
 
-import model.ListOfJudgeScores;
+import model.ListOfJudgeScoresMenLadiesAndPairs;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -26,7 +26,7 @@ public class JsonWriterListOfJudgeScores {
 
     // MODIFIES: this
     // EFFECTS: writes JSON representation of ListOfJudgeScores to file
-    public void write(ListOfJudgeScores js) {
+    public void write(ListOfJudgeScoresMenLadiesAndPairs js) {
         JSONObject json = js.toJson();
         saveToFile(json.toString(TAB));
     }

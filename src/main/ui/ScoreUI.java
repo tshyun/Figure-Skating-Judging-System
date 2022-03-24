@@ -48,7 +48,7 @@
 //    // EFFECTS: initialization
 //    public ScoreUI() throws FileNotFoundException {
 //        CSVReaderInJava csvReaderInJava = new CSVReaderInJava();
-//        List<Element> elements = csvReaderInJava.readBooksFromCSV("2253.txt");
+//        List<Element> elements = csvReaderInJava.readBooksFromCSV("2253MenAndLadies.txt");
 //
 //        jsonReaderListOfExecutedElement = new JsonReaderListOfExecutedElements(STORE_PATH_LIST_OF_EXECUTED_ELEMENTS);
 //        jsonReaderListOfProgramComponents =

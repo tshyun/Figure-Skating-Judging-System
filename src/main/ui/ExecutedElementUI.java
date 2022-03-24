@@ -1,6 +1,6 @@
 package ui;
 
-import model.ExecutedElement;
+import model.ExecutedElementMenAndLadies;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.awt.*;
 class ExecutedElementUI extends JInternalFrame {
     private static final int WIDTH = 200;
     private static final int HEIGHT = 100;
-    private ExecutedElement element;
+    private ExecutedElementMenAndLadies element;
     private String elementName;
     private int halfProgram;
     private double baseValue;
@@ -24,7 +24,7 @@ class ExecutedElementUI extends JInternalFrame {
     JTextField scoresOfPanelText;
 
     // EFFECTS: initialization
-    public ExecutedElementUI(ExecutedElement element, Component parent) {
+    public ExecutedElementUI(ExecutedElementMenAndLadies element, Component parent) {
 
         super("Executed Element Detail", true, true, true, true);
         this.element = element;

@@ -1,6 +1,6 @@
 package persistence;
 
-import model.ListOfJudgeScores;
+import model.ListOfJudgeScoresMenLadiesAndPairs;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class TestListOfJudgeScoresReader {
     void testReaderNonExistentFile() {
         JsonReaderListOfJudgeScores reader = new JsonReaderListOfJudgeScores("./data/noSuchFile.json");
         try {
-            ListOfJudgeScores js = reader.read();
+            ListOfJudgeScoresMenLadiesAndPairs js = reader.read();
             fail("IOException expected");
         } catch (IOException e) {
             // pass
@@ -25,7 +25,7 @@ public class TestListOfJudgeScoresReader {
     void testReaderEmptyScores() {
         JsonReaderListOfJudgeScores reader = new JsonReaderListOfJudgeScores("./data/testEmptyScores.json");
         try {
-            ListOfJudgeScores ls = reader.read();
+            ListOfJudgeScoresMenLadiesAndPairs ls = reader.read();
             assertEquals(0, ls.getSize());
         } catch (IOException e) {
             fail("Couldn't read from file");
@@ -36,7 +36,7 @@ public class TestListOfJudgeScoresReader {
     void testReaderGeneralScores() {
         JsonReaderListOfJudgeScores reader = new JsonReaderListOfJudgeScores("./data/testGeneralLOS.json");
         try {
-            ListOfJudgeScores ls = reader.read();
+            ListOfJudgeScoresMenLadiesAndPairs ls = reader.read();
             assertEquals(9, ls.getSize());
             assertEquals(4.14, ls.average());
         } catch (IOException e) {

@@ -1,39 +1,21 @@
 package model;
 
-
 import org.json.JSONObject;
 import persistence.Writable;
 
-// represent a element in execued elements
 public class ExecutedElement implements Writable {
+    protected String elementName; // the name of element
+    protected double baseValue; // base value of this element
+    protected int halfProgram; // 0 for false, 1 for true
+    protected double goe; // the score for skater to represent (good or bad, between [-5,5])
+    protected ListOfJudgeScoresMenLadiesAndPairs judgeScore; // list of judge's score for this element, 9 judges
+    protected double scoresOfPanel; // total score for this element, base value + GOE
 
-    private Single single;
-    private String elementName; // the name of element
-    private double baseValue; // base value of this element
-    private int halfProgram; // 0 for false, 1 for true
-    private double goe; // the score for skater to represent (good or bad, between [-5,5])
-    private ListOfJudgeScores judgeScore; // list of judge's score for this element, 9 judges
-    private double scoresOfPanel; // total score for this element, base value + GOE
-
-    public ExecutedElement(String en,
-                           int halfProgram,
-                           ListOfJudgeScores judge) {
-        single = new Single();
+    public ExecutedElement(String en, int halfProgram, ListOfJudgeScoresMenLadiesAndPairs judge) {
         this.elementName = en;
-        this.baseValue = single.getBaseValue(en);
         this.halfProgram = halfProgram;
-        EventLog.getInstance().logEvent(new Event("Added executed element: " + en + ", with base value: " + baseValue
-                + ", half program?(0 for no, 1 for yes): " + halfProgram));
-        EventLog.getInstance().logEvent(new Event("Added judge score for " + en + " is " + judge.scoresToEventLog()));
-        this.goe = calculateGOE(judge.average());
         this.judgeScore = judge;
-        this.scoresOfPanel = calculatePanelScores(baseValue, goe);
-
-
-
     }
-
-    // lots of getter
 
     public double getGoe() {
         return goe;
@@ -51,7 +33,7 @@ public class ExecutedElement implements Writable {
         return halfProgram;
     }
 
-    public ListOfJudgeScores getJudgeScore() {
+    public ListOfJudgeScoresMenLadiesAndPairs getJudgeScore() {
         return judgeScore;
     }
 
@@ -65,7 +47,6 @@ public class ExecutedElement implements Writable {
         d = Math.round(d * 100.0) / 100.0;
         return d;
     }
-
 
     // EFFECTS : calculate GOE value
     public double calculateGOE(double p) {
@@ -98,14 +79,10 @@ public class ExecutedElement implements Writable {
         JSONObject json = new JSONObject();
         json.put("Executed Element Name", elementName);
         json.put("Half Program", halfProgram);
-        json.put("Base Value",baseValue);
+        json.put("Base Value", baseValue);
         json.put("GOE", goe);
         json.put("scores", judgeScore.toJson());
         json.put("Score for this element", scoresOfPanel);
         return json;
     }
-
-
-
-
 }

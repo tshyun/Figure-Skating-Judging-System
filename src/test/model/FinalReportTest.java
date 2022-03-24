@@ -9,8 +9,8 @@ public class FinalReportTest {
     private FinalReport report;
 
     private ListOfExecutedElements list;
-    private ExecutedElement e1;
-    private ExecutedElement e2;
+    private ExecutedElementMenAndLadies e1;
+    private ExecutedElementMenAndLadies e2;
 
     private ListOfProgramComponents list1;
     private ProgramComponent p1;
@@ -32,7 +32,7 @@ public class FinalReportTest {
     @Test
     void testSetLoe() {
         list = new ListOfExecutedElements();
-        ListOfJudgeScores score1 = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs score1 = new ListOfJudgeScoresMenLadiesAndPairs();
         score1.addScores(1);
         score1.addScores(2);
         score1.addScores(1);
@@ -42,8 +42,8 @@ public class FinalReportTest {
         score1.addScores(2);
         score1.addScores(1);
         score1.addScores(1);
-        e1 = new ExecutedElement("4T", 0, score1);
-        ListOfJudgeScores score2 = new ListOfJudgeScores();
+        e1 = new ExecutedElementMenAndLadies("4T", 0, score1);
+        ListOfJudgeScoresMenLadiesAndPairs score2 = new ListOfJudgeScoresMenLadiesAndPairs();
         score2.addScores(-5);
         score2.addScores(-5);
         score2.addScores(-5);
@@ -53,7 +53,7 @@ public class FinalReportTest {
         score2.addScores(-5);
         score2.addScores(-5);
         score2.addScores(-5);
-        e2 = new ExecutedElement("4F", 0, score2);
+        e2 = new ExecutedElementMenAndLadies("4F", 0, score2);
         list.addElement(e1);
         list.addElement(e2);
         report.setLoe(list);
@@ -63,7 +63,7 @@ public class FinalReportTest {
     @Test
     void testSetLop() {
         list1 = new ListOfProgramComponents();
-        ListOfJudgeScores score1 = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs score1 = new ListOfJudgeScoresMenLadiesAndPairs();
         score1.addScores(8.75);
         score1.addScores(9.00);
         score1.addScores(8.75);
@@ -74,7 +74,7 @@ public class FinalReportTest {
         score1.addScores(8.50);
         score1.addScores(8.75);
         p1 = new ProgramComponent("Skating Skills", 1.00, score1);//8.64
-        ListOfJudgeScores score2 = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs score2 = new ListOfJudgeScoresMenLadiesAndPairs();
         score2.addScores(8.75);
         score2.addScores(9.25);
         score2.addScores(8.50);

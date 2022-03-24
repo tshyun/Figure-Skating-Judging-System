@@ -11,7 +11,7 @@ public class ProgramComponentTest {
 
     @BeforeEach
     public void before() {
-        ListOfJudgeScores scores = new ListOfJudgeScores();
+        ListOfJudgeScoresMenLadiesAndPairs scores = new ListOfJudgeScoresMenLadiesAndPairs();
         scores.addScores(8.75);
         scores.addScores(9.00);
         scores.addScores(8.75);

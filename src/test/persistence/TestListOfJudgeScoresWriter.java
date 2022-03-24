@@ -1,7 +1,6 @@
 package persistence;
 
-import model.ListOfJudgeScores;
-import org.json.JSONWriter;
+import model.ListOfJudgeScoresMenLadiesAndPairs;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -14,7 +13,7 @@ public class TestListOfJudgeScoresWriter {
     @Test
     void testWriterInvalidFile() {
         try {
-            ListOfJudgeScores js = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs js = new ListOfJudgeScoresMenLadiesAndPairs();
             JsonWriterListOfJudgeScores writer = new JsonWriterListOfJudgeScores("./data/my\0:fileName.json");
             writer.open();
             fail("IOException was expected");
@@ -26,7 +25,7 @@ public class TestListOfJudgeScoresWriter {
     @Test
     void testWriterEmptyScores() {
         try {
-            ListOfJudgeScores js = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs js = new ListOfJudgeScoresMenLadiesAndPairs();
             JsonWriterListOfJudgeScores writer = new JsonWriterListOfJudgeScores("./data/testEmptyScores.json");
             writer.open();
             writer.write(js);
@@ -44,7 +43,7 @@ public class TestListOfJudgeScoresWriter {
     @Test
     void testWriterGeneralScores() {
         try {
-            ListOfJudgeScores ls = new ListOfJudgeScores();
+            ListOfJudgeScoresMenLadiesAndPairs ls = new ListOfJudgeScoresMenLadiesAndPairs();
             ls.addScores(4);
             ls.addScores(4);
             ls.addScores(4);

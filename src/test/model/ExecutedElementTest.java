@@ -25,18 +25,18 @@ class ExecutedElementTest {
         e1 = new ExecutedElement
                 ("4Lz", 0, score1);
 
-//        ListOfJudgeScores score2 = new ListOfJudgeScores();
-//        score2.addScores(2);
-//        score2.addScores(0);
-//        score2.addScores(-1);
-//        score2.addScores(-1);
-//        score2.addScores(-1);
-//        score2.addScores(2);
-//        score2.addScores(-1);
-//        score2.addScores(-1);
-//        score2.addScores(-1);
-//        e2 = new ExecutedElement
-//                ("4T+3T", 13.70, 0, score2);
+        ListOfJudgeScores score2 = new ListOfJudgeScores();
+        score2.addScores(2);
+        score2.addScores(0);
+        score2.addScores(-1);
+        score2.addScores(-1);
+        score2.addScores(-1);
+        score2.addScores(2);
+        score2.addScores(-1);
+        score2.addScores(-1);
+        score2.addScores(-1);
+        e2 = new ExecutedElement
+                ("4T+3T",0, score2);
 
 
     }
@@ -47,11 +47,11 @@ class ExecutedElementTest {
         assertEquals(4.44, e1.calculateGOE(judge.average()));
     }
 
-//    @Test
-//    public void calculateGOENegativeTest(){
-//        ListOfJudgeScores judge = e2.getJudgeScore();
-//        assertEquals(-0.59, e2.calculateGOE(judge.average()));
-//    }
+    @Test
+    public void calculateGOENegativeTest(){
+        ListOfJudgeScores judge = e2.getJudgeScore();
+        assertEquals(-0.59, e2.calculateGOE(judge.average()));
+    }
 
     @Test
     public void calculatePanelScoresNotHalfTest () {

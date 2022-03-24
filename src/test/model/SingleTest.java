@@ -8,10 +8,17 @@ public class SingleTest {
     private Single single;
 
     @Test
-    public void testMatch() {
+    public void testMatchSingle() {
         single = new Single();
         String elementName = "4Lz";
         double result = single.getBaseValue(elementName);
         assertEquals(11.50, result);
+    }
+    @Test
+    public void testMatchDouble() {
+        single = new Single();
+        String elementName = "4Lz+3T";
+        double result = single.getBaseValue(elementName);
+        assertEquals(15.70, result);
     }
 }

@@ -12,9 +12,28 @@ public class Single {
 
     public double getBaseValue(String name){
         double baseValue = 0.0;
-        for (Element element : elements) {
-            if (element.getElementName().equals(name)) {
-                baseValue = element.getBaseValue();
+        if (name.contains("+")) {
+            String[] s = name.split("\\+");
+            String element1 = s[0];
+            String element2 = s[1];
+            double baseValue1 = 0.0;
+            double baseValue2 = 0.0;
+            for (Element element : elements) {
+                if (element.getElementName().equals(element1)) {
+                    baseValue1 = element.getBaseValue();
+                }
+            }
+            for (Element element : elements) {
+                if (element.getElementName().equals(element2)) {
+                    baseValue2 = element.getBaseValue();
+                }
+            }
+            baseValue = baseValue1 + baseValue2;
+        } else {
+            for (Element element : elements) {
+                if (element.getElementName().equals(name)) {
+                    baseValue = element.getBaseValue();
+                }
             }
         }
         return baseValue;

@@ -42,7 +42,7 @@ public class FinalReportTest {
         score1.addScores(2);
         score1.addScores(1);
         score1.addScores(1);
-        e1 = new ExecutedElement("4T", 9.50, 0, score1);
+        e1 = new ExecutedElement("4T", 0, score1);
         ListOfJudgeScores score2 = new ListOfJudgeScores();
         score2.addScores(-5);
         score2.addScores(-5);
@@ -53,7 +53,7 @@ public class FinalReportTest {
         score2.addScores(-5);
         score2.addScores(-5);
         score2.addScores(-5);
-        e2 = new ExecutedElement("4F",  11.00, 0, score2);
+        e2 = new ExecutedElement("4F", 0, score2);
         list.addElement(e1);
         list.addElement(e2);
         report.setLoe(list);

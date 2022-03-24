@@ -4,15 +4,10 @@ package model;
 import org.json.JSONObject;
 import persistence.Writable;
 
-import java.nio.file.Watchable;
-import java.util.List;
-
-import static java.lang.Math.E;
-import static java.lang.Math.abs;
-
 // represent a element in execued elements
 public class ExecutedElement implements Writable {
 
+    private Single single;
     private String elementName; // the name of element
     private double baseValue; // base value of this element
     private int halfProgram; // 0 for false, 1 for true
@@ -21,11 +16,11 @@ public class ExecutedElement implements Writable {
     private double scoresOfPanel; // total score for this element, base value + GOE
 
     public ExecutedElement(String en,
-                           double baseValue,
                            int halfProgram,
                            ListOfJudgeScores judge) {
+        single = new Single();
         this.elementName = en;
-        this.baseValue = baseValue;
+        this.baseValue = single.getBaseValue(en);
         this.halfProgram = halfProgram;
         EventLog.getInstance().logEvent(new Event("Added executed element: " + en + ", with base value: " + baseValue
                 + ", half program?(0 for no, 1 for yes): " + halfProgram));

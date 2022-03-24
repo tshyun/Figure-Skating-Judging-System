@@ -68,7 +68,7 @@ public class JsonReaderListOfExecutedElements {
         double baseValue = jsonObject.getDouble("Base Value");
         ListOfJudgeScores ls;
         ls = parseListOfScore(jsonObject.getJSONObject("scores"));
-        ExecutedElement e = new ExecutedElement(name, baseValue, half, ls);
+        ExecutedElement e = new ExecutedElement(name, half, ls);
         lee.addElement(e);
     }
 

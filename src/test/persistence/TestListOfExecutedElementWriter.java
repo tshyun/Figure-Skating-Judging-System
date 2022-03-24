@@ -25,7 +25,7 @@ public class TestListOfExecutedElementWriter {
             scores.addScores(1);
             scores.addScores(1);
             scores.addScores(1);
-            ExecutedElement js = new ExecutedElement("name", 0, 1, scores);
+            ExecutedElement js = new ExecutedElement("name", 1, scores);
             JsonWriterListOfExecutedElements writer = new JsonWriterListOfExecutedElements("./data/my\0:fileName.json");
             writer.open();
             fail("IOException was expected");
@@ -47,7 +47,7 @@ public class TestListOfExecutedElementWriter {
             score1.addScores(2);
             score1.addScores(1);
             score1.addScores(1);
-            ExecutedElement e1 = new ExecutedElement("4T", 9.50, 0, score1);
+            ExecutedElement e1 = new ExecutedElement("4T", 0, score1);
             ListOfJudgeScores score2 = new ListOfJudgeScores();
             score2.addScores(-5);
             score2.addScores(-5);
@@ -58,7 +58,7 @@ public class TestListOfExecutedElementWriter {
             score2.addScores(-5);
             score2.addScores(-5);
             score2.addScores(-5);
-            ExecutedElement e2 = new ExecutedElement("4F",  11.00, 0, score2);
+            ExecutedElement e2 = new ExecutedElement("4F",  0, score2);
             ListOfExecutedElements lee = new ListOfExecutedElements();
             lee.addElement(e1);
             lee.addElement(e2);
